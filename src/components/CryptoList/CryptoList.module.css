@@ -1,0 +1,59 @@
+.container {
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  text-align: left;
+  padding: 12px;
+  font-size: 12px;
+  color: #707a8a;
+  border-bottom: 1px solid #e6e8ea;
+}
+
+.table td {
+  padding: 16px 12px;
+  font-size: 14px;
+  color: #1e2329;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.nameCell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  font-size: 20px;
+}
+
+.name {
+  font-weight: 500;
+}
+
+.symbol {
+  color: #707a8a;
+  margin-left: 4px;
+}
+
+.positive {
+  color: #02c076;
+}
+
+.negative {
+  color: #f6465d;
+}
+
+.table tr:hover {
+  background-color: #f8f9fa;
+  cursor: pointer;
+} 

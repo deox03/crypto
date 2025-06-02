@@ -1,0 +1,152 @@
+.coinItem {
+  display: grid;
+  grid-template-columns: 50px 50px 2.5fr 1fr 1fr 1.2fr 1.2fr;
+  padding: 20px 24px;
+  align-items: center;
+  background: var(--card-bg);
+  border-radius: 16px;
+  margin: 8px 0;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.coinItem:hover {
+  background: var(--bg-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px var(--shadow-color);
+}
+
+.star {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.starIcon {
+  font-size: 18px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.starIcon:hover {
+  color: #ffd700;
+  transform: scale(1.2);
+}
+
+.starIcon.active {
+  color: #ffd700;
+}
+
+.rank {
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.name img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  padding: 2px;
+  background: var(--card-bg);
+}
+
+.name span {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.symbol {
+  color: var(--text-secondary);
+  font-size: 13px;
+  margin-left: 8px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.price {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.change24h {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  width: fit-content;
+}
+
+.positive {
+  color: #16c784;
+  background: rgba(22, 199, 132, 0.1);
+}
+
+.negative {
+  color: #ea3943;
+  background: rgba(234, 57, 67, 0.1);
+}
+
+.marketCap, .volume {
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .coinItem {
+    grid-template-columns: 40px 40px 2fr 1fr 1fr 1fr 1fr;
+    padding: 16px 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .coinItem {
+    grid-template-columns: 40px 40px 2fr 1fr 1fr;
+    padding: 14px 16px;
+  }
+
+  .volume, .marketCap {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .coinItem {
+    grid-template-columns: 30px 30px 2fr 1fr 1fr;
+    padding: 12px;
+    margin: 6px 0;
+  }
+
+  .name img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .name span {
+    font-size: 14px;
+  }
+
+  .symbol {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .coinItem {
+    grid-template-columns: 30px 30px 2fr 1fr;
+    font-size: 13px;
+  }
+
+  .change24h {
+    display: none;
+  }
+} 

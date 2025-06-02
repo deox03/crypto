@@ -1,0 +1,62 @@
+.chartContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.timeframeButtons {
+  display: flex;
+  gap: 8px;
+  padding: 0 16px;
+}
+
+.timeframeButton {
+  padding: 6px 12px;
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-secondary);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.timeframeButton:hover {
+  background: var(--bg-secondary);
+  border-color: var(--text-secondary);
+  color: var(--text-primary);
+}
+
+.timeframeButton.active {
+  background: var(--bg-secondary);
+  border-color: #3861FB;
+  color: #3861FB;
+}
+
+.chart {
+  flex: 1;
+  min-height: 400px;
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .timeframeButtons {
+    padding: 0;
+    flex-wrap: wrap;
+  }
+
+  .timeframeButton {
+    padding: 4px 8px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 576px) {
+  .chart {
+    min-height: 300px;
+  }
+} 

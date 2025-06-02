@@ -1,0 +1,81 @@
+.headerContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.card {
+  padding: 15px;
+  border-radius: 8px;
+  background: #f8f9fa;
+}
+
+.title {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1e2329;
+}
+
+.chart {
+  width: 100%;
+  height: 60px;
+  margin-top: 10px;
+}
+
+.percentage {
+  color: #02c076;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.percentage.negative {
+  color: #f6465d;
+}
+
+.fearGreed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fearGreedValue {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.altcoinSeason {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.seasonProgress {
+  width: 100%;
+  height: 8px;
+  background: #e6e8ea;
+  border-radius: 4px;
+  margin-top: 10px;
+  position: relative;
+}
+
+.seasonIndicator {
+  position: absolute;
+  height: 100%;
+  background: linear-gradient(90deg, #f6465d 0%, #02c076 100%);
+  border-radius: 4px;
+} 

@@ -1,0 +1,187 @@
+.tabsContainer {
+  margin-top: 24px;
+  background: var(--card-bg);
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.tabButtons {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tabButton {
+  padding: 8px 16px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+}
+
+.tabButton:hover {
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+}
+
+.tabButton.active {
+  color: #3861FB;
+  background: var(--bg-secondary);
+}
+
+.tabContent {
+  padding: 24px;
+}
+
+/* Markets Tab */
+.marketsTable {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+  padding: 12px;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: 14px;
+  gap: 12px;
+}
+
+.tableBody {
+  margin-top: 8px;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+  padding: 16px 12px;
+  border-bottom: 1px solid var(--border-color);
+  align-items: center;
+  gap: 12px;
+  color: var(--text-primary);
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.exchange {
+  font-weight: 500;
+}
+
+.pair {
+  color: var(--text-secondary);
+}
+
+.price {
+  font-weight: 500;
+}
+
+.spread {
+  color: var(--text-secondary);
+}
+
+.volume24h {
+  font-weight: 500;
+}
+
+/* About Tab */
+.aboutSection {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.description {
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.description a {
+  color: #3861FB;
+  text-decoration: none;
+}
+
+.description a:hover {
+  text-decoration: underline;
+}
+
+.links h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.linkGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.link:hover {
+  border-color: var(--text-secondary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tabContent {
+    padding: 16px;
+  }
+
+  .tableHeader,
+  .tableRow {
+    grid-template-columns: 1.2fr 1fr 1fr 0.8fr 0.8fr;
+    font-size: 13px;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .tabButtons {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .tabButton {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .tableHeader,
+  .tableRow {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .spread,
+  .volume24h {
+    display: none;
+  }
+
+  .linkGrid {
+    grid-template-columns: 1fr;
+  }
+} 

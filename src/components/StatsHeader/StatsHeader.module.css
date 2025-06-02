@@ -1,0 +1,36 @@
+.statsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+  padding: 8px 16px;
+  background-color: #fff;
+  border-bottom: 1px solid #e6e8ea;
+  font-size: 14px;
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.label {
+  color: #707a8a;
+}
+
+.value {
+  color: #1e2329;
+  font-weight: 500;
+}
+
+.dominanceValues {
+  display: flex;
+  gap: 8px;
+  color: #1e2329;
+  font-weight: 500;
+}
+
+.dominanceValues span {
+  white-space: nowrap;
+} 

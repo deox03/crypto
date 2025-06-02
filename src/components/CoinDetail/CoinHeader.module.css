@@ -1,0 +1,170 @@
+.header {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid var(--border-color);
+}
+
+.mainInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.titleSection {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.coinIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.titleInfo h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.symbol {
+  color: var(--text-secondary);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.rank {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.watchlistButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.watchlistButton:hover {
+  background: var(--bg-secondary);
+  border-color: var(--text-secondary);
+}
+
+.watchlistButton svg {
+  color: #F3BA2F;
+}
+
+.priceSection {
+  text-align: right;
+}
+
+.currentPrice {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.priceChange {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.positive {
+  color: #16C784;
+  background: rgba(22, 199, 132, 0.1);
+}
+
+.negative {
+  color: #EA3943;
+  background: rgba(234, 57, 67, 0.1);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.statItem {
+  background: var(--bg-secondary);
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.statLabel {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.statValue {
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .mainInfo {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .priceSection {
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 16px;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .titleSection {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 576px) {
+  .titleInfo h1 {
+    font-size: 24px;
+  }
+
+  .symbol {
+    font-size: 18px;
+  }
+
+  .currentPrice {
+    font-size: 28px;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+} 

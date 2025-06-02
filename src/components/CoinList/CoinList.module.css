@@ -1,0 +1,360 @@
+.coinList {
+  width: 100%;
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 40px 40px minmax(200px, 2fr) 1fr 1fr 1fr 1fr;
+  padding: 16px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  gap: 8px;
+  align-items: center;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(45deg, #2563eb, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+}
+
+.searchInput {
+  padding: 14px 20px;
+  border-radius: 16px;
+  border: 2px solid #e5e7eb;
+  background: #f9fafb;
+  color: #1f2937;
+  font-size: 15px;
+  width: 320px;
+  transition: all 0.3s ease;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #2563eb;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.searchInput::placeholder {
+  color: #9ca3af;
+}
+
+.listHeader {
+  display: grid;
+  grid-template-columns: 30px 30px 2.5fr 1fr 1fr 1fr 1fr;
+  padding: 16px 24px;
+  background: #f3f4f6;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  color: #4b5563;
+  font-size: 14px;
+  gap: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.listContainer {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.coinItem {
+  display: grid;
+  grid-template-columns: 30px 30px 2.5fr 1fr 1fr 1fr 1fr;
+  padding: 20px 24px;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid #f3f4f6;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #ffffff;
+}
+
+.coinItem:last-child {
+  border-bottom: none;
+}
+
+.coinItem:hover {
+  background: #f9fafb;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+}
+
+.star {
+  width: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.star.active {
+  color: #eab308;
+  transform: scale(1.1);
+}
+
+.rank {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.name {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.name img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  padding: 2px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.name span {
+  color: #111827;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.symbol {
+  color: #6b7280;
+  font-size: 13px;
+  text-transform: uppercase;
+  margin-left: 8px;
+  font-weight: 500;
+}
+
+.price {
+  color: var(--text-secondary);
+  font-size: 14px;
+  text-align: right;
+}
+
+.change24h {
+  color: var(--text-secondary);
+  font-size: 14px;
+  text-align: right;
+}
+
+.change24h.positive {
+  color: #059669;
+  background: #ecfdf5;
+}
+
+.change24h.negative {
+  color: #dc2626;
+  background: #fef2f2;
+}
+
+.marketCap {
+  color: var(--text-secondary);
+  font-size: 14px;
+  text-align: right;
+}
+
+.volume {
+  color: var(--text-secondary);
+  font-size: 14px;
+  text-align: right;
+}
+
+.loadingContainer {
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: var(--text-secondary);
+}
+
+.loadingSpinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--border-color);
+  border-top: 3px solid #6c5ce7;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.errorContainer {
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 24px;
+}
+
+.error span {
+  font-size: 32px;
+}
+
+.retryButton {
+  background: #6c5ce7;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.retryButton:hover {
+  background: #5f50e6;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Tablet Responsive Design */
+@media (max-width: 1024px) {
+  .header {
+    grid-template-columns: 40px 40px minmax(150px, 1.5fr) 1fr 1fr 1fr 1fr;
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .searchInput {
+    width: 280px;
+  }
+
+  .listHeader,
+  .coinItem {
+    grid-template-columns: 30px 30px 2fr 1fr 1fr 1fr;
+    padding: 16px;
+    font-size: 13px;
+  }
+
+  .volume {
+    display: none;
+  }
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    grid-template-columns: 40px 40px minmax(120px, 1fr) 1fr 1fr 1fr;
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .searchInput {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px 16px;
+  }
+
+  .listHeader,
+  .coinItem {
+    grid-template-columns: 30px 2fr 1fr 1fr;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .star,
+  .marketCap {
+    display: none;
+  }
+
+  .name img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .name span {
+    font-size: 14px;
+  }
+
+  .symbol {
+    font-size: 12px;
+  }
+
+  .price {
+    font-size: 14px;
+  }
+
+  .change24h {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  .volume {
+    display: none;
+  }
+}
+
+/* Small Mobile Responsive Design */
+@media (max-width: 480px) {
+  .title {
+    font-size: 20px;
+  }
+
+  .listHeader,
+  .coinItem {
+    grid-template-columns: 2fr 1fr 1fr;
+    padding: 10px;
+  }
+
+  .rank {
+    display: none;
+  }
+
+  .name img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .name span {
+    font-size: 13px;
+  }
+
+  .symbol {
+    font-size: 11px;
+  }
+
+  .price,
+  .change24h {
+    font-size: 12px;
+  }
+} 

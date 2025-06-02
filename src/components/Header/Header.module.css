@@ -1,0 +1,301 @@
+.statsBar {
+  background-color: var(--header-bg);
+  color: var(--text-primary);
+  padding: 6px 0;
+  font-size: 12px;
+  width: 100%;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.statsContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 8px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 24px;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+
+.statsContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.statsContainer span {
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.statsContainer strong {
+  color: var(--text-primary);
+  margin-left: 4px;
+  font-weight: 600;
+}
+
+.header {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--header-bg);
+  width: 100%;
+}
+
+.navBar {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #6c5ce7;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: #00b8d9;
+  border-radius: 50%;
+}
+
+.navLinks {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.navLinks a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.2s;
+  padding: 6px 8px;
+  border-radius: 8px;
+  margin:0px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.navLinks a:hover {
+  color: #6c5ce7;
+  background-color: var(--hover-bg);
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icon {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.icon:hover {
+  color: #6c5ce7;
+  background-color: var(--hover-bg);
+}
+
+.searchWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 8px 16px;
+  padding-right: 40px;
+  color: var(--text-primary);
+  width: 280px;
+  font-size: 14px;
+  transition: all 0.2s;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.search:focus {
+  outline: none;
+  border-color: #6c5ce7;
+  background-color: var(--bg-primary);
+}
+
+.search::placeholder {
+  color: var(--text-secondary);
+}
+
+.searchIcon {
+  position: absolute;
+  right: 12px;
+  color: var(--text-secondary);
+  pointer-events: none;
+  font-size: 14px;
+}
+
+.searchResults {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px var(--shadow-color);
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.searchResultItem {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--text-primary);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.searchResultItem:last-child {
+  border-bottom: none;
+}
+
+.searchResultItem:hover {
+  background: var(--hover-bg);
+}
+
+.searchResultItem img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.coinInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.coinName {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.coinSymbol {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.login {
+  background-color: #0077cc;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 14px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.login:hover {
+  background-color: #0066b3;
+}
+
+.menu {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.menu:hover {
+  background-color: var(--hover-bg);
+}
+
+.loading {
+  color: var(--text-secondary);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1200px) {
+  .navLinks {
+    display: none;
+  }
+  
+  .icon span {
+    display: none;
+  }
+  
+  .menu {
+    display: block;
+  }
+  
+  .search {
+    width: 200px;
+  }
+  
+  .statsContainer {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 768px) {
+  .search {
+    width: 200px;
+  }
+  
+  .searchResults {
+    width: 280px;
+  }
+} 
