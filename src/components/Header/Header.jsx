@@ -13,6 +13,7 @@ const Header = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [showResults, setShowResults] = useState(false);
   const [allCoins, setAllCoins] = useState([]);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   const dropdownMenus = {
@@ -110,6 +111,14 @@ const Header = () => {
     navigate(`/coins/${coinId}`);
   };
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleMobileNavClick = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   const formatNumber = (value, suffix = '') => {
     if (value >= 1e12) return `${(value / 1e12).toFixed(2)}T${suffix}`;
     if (value >= 1e9) return `${(value / 1e9).toFixed(2)}B${suffix}`;
@@ -163,7 +172,7 @@ const Header = () => {
             <Link to="/" className={styles.logo}>
               CryptoVerse <span className={styles.dot}></span>
             </Link>
-            <nav className={styles.navLinks}>
+            <nav className={`${styles.navLinks} ${isMobileMenuOpen ? styles.mobileMenuOpen : ''}`}>
               {Object.entries(dropdownMenus).map(([key, menu]) => (
                 <DropdownMenu 
                   key={key}
@@ -171,13 +180,13 @@ const Header = () => {
                   sections={menu.sections}
                 />
               ))}
-              <Link to="/portfolio" className={styles.portfolioLink}>Portfolio</Link>
-              <Link to="/converter" className={styles.portfolioLink}>Converter</Link>
+              <Link to="/portfolio" className={styles.portfolioLink} onClick={handleMobileNavClick}>Portfolio</Link>
+              <Link to="/converter" className={styles.portfolioLink} onClick={handleMobileNavClick}>Converter</Link>
             </nav>
           </div>
 
           <div className={styles.right}>
-            <Link to="/watchlist" className={styles.icon}>
+            <Link to="/watchlist" className={styles.icon} onClick={handleMobileNavClick}>
               <span>⭐</span> Watchlist
             </Link>
             <div className={styles.searchWrapper}>
@@ -210,10 +219,11 @@ const Header = () => {
               )}
             </div>
             <ProfileDrawer />
-            <button className={styles.menu}>☰</button>
+            <button className={styles.menu} onClick={toggleMobileMenu}>☰</button>
           </div>
         </div>
       </header>
+      {isMobileMenuOpen && <div className={styles.mobileMenuOverlay} onClick={toggleMobileMenu} />}
     </>
   );
 };
